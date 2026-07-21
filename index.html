@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Preberací protokol ZSE / VSE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- HLAVIČKA -->
+    <div class="top-header">
+        <div class="brand-zse">
+            <img src="https://www.zse.sk/assets/logo.5e88af9d.svg" alt="ZSE Logo">
+        </div>
+        <div class="brand-vse">
+            <img src="https://vseasportalprodb2c.blob.core.windows.net/vseb2cprod/assets/logo_vse.png" alt="VSE Logo">
+        </div>
+    </div>
+
+    <!-- NÁZOV DOKUMENTU -->
+    <div class="title-row">
+        <div class="title-left">
+            <h1>Preberací protokol č.: <input type="text" class="input-line font-bold" style="width: 180px;"></h1>
+            <p class="subtitle">Preberací protokol je zároveň dodacím listom, záručným listom, dokladom o inštalácií zariadenia v domácnosti a o uvedení zariadenia do prevádzky</p>
+        </div>
+        <div class="title-right">
+            <span>Pre Zhotoviteľa</span>
+            <svg class="house-icon" viewBox="0 0 24 24" width="18" height="18" fill="#e2001a">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- KARTA ZHOTOVITEĽ & KONTAKT -->
+    <div class="info-table margin-bottom">
+        <div class="info-col">
+            <strong>Zhotoviteľ (ďalej len „Zhotoviteľ“):</strong><br>
+            Energetika Slovensko, a.s., Čulenova 6, 811 09 Bratislava<br>
+            <strong>IČO:</strong> 44 483 767, <strong>DIČ:</strong> 2022730457, <strong>IČ DPH:</strong> SK2022730457<br>
+            Zapísaná v OR MS Košice, odd. Sa, vložka č. 1628/V
+        </div>
+        <div class="info-col">
+            <strong>Kontakt:</strong> www.zse.sk<br>
+            <strong>Korešpondenčná adresa:</strong> P. O. BOX 325, 810 00 Bratislava<br>
+            <strong>Bankové spojenie:</strong> Tatra banka, a. s.<br>
+            <strong>IBAN:</strong> SK59 1100 0000 0029 4044 4444, <strong>BIC (SWIFT):</strong> TATRSKBX
+        </div>
+    </div>
+
+    <!-- OBJEDNÁVATEĽ -->
+    <div class="box-section margin-bottom">
+        <div class="box-header">Objednávateľ:</div>
+        <div class="grid-2col padding-inner">
+            <div class="form-field">
+                <label>Titul, meno a priezvisko</label>
+                <input type="text" class="input-full">
+            </div>
+            <div class="form-field">
+                <label>Adresa inštalácie zariadenia</label>
+                <input type="text" class="input-full">
+            </div>
+            <div class="form-field">
+                <label>Kontaktná osoba (titul, meno, priezvisko)</label>
+                <input type="text" class="input-full">
+            </div>
+            <div class="form-field">
+                <label>Telefón</label>
+                <input type="tel" class="input-full">
+            </div>
+        </div>
+    </div>
+
+    <!-- TABUĽKA FOTOVOLTICKÉ PANELY -->
+    <div class="table-responsive margin-bottom">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Typ zariadenia</th>
+                    <th>Počet kusov</th>
+                    <th>Výkon panelov spolu</th>
+                    <th>Označenie zariadenia</th>
+                    <th>Výrobca</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="6" class="align-top">
+                        <label class="chk-label"><input type="checkbox" checked> Fotovoltické panely</label>
+                    </td>
+                    <td rowspan="6" class="align-center">
+                        <div class="counter-control">
+                            <button type="button" class="btn-step no-print" onclick="changeVal('panely_ks', -1)">-</button>
+                            <input type="number" id="panely_ks" class="input-num text-center" value="0">
+                            <button type="button" class="btn-step no-print" onclick="changeVal('panely_ks', 1)">+</button>
+                            <span>ks</span>
+                        </div>
+                    </td>
+                    <td rowspan="6" class="align-center">
+                        <div class="counter-control">
+                            <input type="text" class="input-num text-center" style="width: 55px;" placeholder="0.0">
+                            <span>kWp</span>
+                        </div>
+                    </td>
+                    <td><label class="chk-label"><input type="radio" name="panel"> TSM-435NEG9R.28</label></td>
+                    <td>Trina Solar Co.,Ltd.</td>
+                </tr>
+                <tr>
+                    <td><label class="chk-label"><input type="radio" name="panel"> TSM-435NEG9R.25</label></td>
+                    <td>Trina Solar Co.,Ltd.</td>
+                </tr>
+                <tr>
+                    <td><label class="chk-label"><input type="radio" name="panel"> TSM-440NEG9R.28</label></td>
+                    <td>Trina Solar Co.,Ltd.</td>
+                </tr>
+                <tr>
+                    <td><label class="chk-label"><input type="radio" name="panel"> TSM-445NEG9R.28</label></td>
+                    <td>Trina Solar Co.,Ltd.</td>
+                </tr>
+                <tr>
+                    <td><label class="chk-label"><input type="radio" name="panel"> TSM-455NEG9R.28</label></td>
+                    <td>Trina Solar Co.,Ltd.</td>
+                </tr>
+                <tr>
+                    <td><label class="chk-label"><input type="radio" name="panel"> iné: <input type="text" class="input-line" style="width: 70px;"></label></td>
+                    <td>iné: <input type="text" class="input-line" style="width: 90px;"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- STRIEDAČ A BATÉRIA -->
+    <div class="grid-2col-split margin-bottom">
+        <div class="box-section">
+            <div class="box-header">Striedač/Inverter</div>
+            <div class="grid-3col-chks padding-inner">
+                <div>
+                    <label class="chk-label"><input type="radio" name="inv"> Huawei SUN2000-3KTL-M1</label>
+                    <label class="chk-label"><input type="radio" name="inv"> Huawei SUN2000-4KTL-M1</label>
+                    <label class="chk-label"><input type="radio" name="inv"> Huawei SUN2000-5KTL-M1</label>
+                    <label class="chk-label"><input type="radio" name="inv"> Huawei SUN2000-6KTL-M1</label>
+                    <label class="chk-label"><input type="radio" name="inv"> Huawei SUN2000-8KTL-M1</label>
+                </div>
+                <div>
+                    <label class="chk-label"><input type="radio" name="inv"> Huawei SUN2000-10KTL-M1</label>
+                    <label class="chk-label"><input type="radio" name="inv"> SolarEdge SE3K-RWB</label>
+                    <label class="chk-label"><input type="radio" name="inv"> SolarEdge SE4K-RWB</label>
+                    <label class="chk-label"><input type="radio" name="inv"> SolarEdge SE5K-RWB</label>
+                    <label class="chk-label"><input type="radio" name="inv"> SolarEdge SE5K</label>
+                </div>
+                <div>
+                    <label class="chk-label"><input type="radio" name="inv"> SolarEdge SE6K</label>
+                    <label class="chk-label"><input type="radio" name="inv"> SolarEdge SE7K</label>
+                    <label class="chk-label"><input type="radio" name="inv"> SolarEdge SE8K</label>
+                    <label class="chk-label"><input type="radio" name="inv"> SolarEdge SE9K</label>
+                    <label class="chk-label"><input type="radio" name="inv"> SolarEdge SE10K</label>
+                </div>
+            </div>
+            <div class="padding-inner" style="padding-top: 0;">
+                <label class="chk-label"><input type="radio" name="inv"> iné: <input type="text" class="input-line" style="width: 80%;"></label>
+            </div>
+        </div>
+
+        <div class="box-section">
+            <div class="box-header">Batéria</div>
+            <div class="padding-inner">
+                <label class="chk-label"><input type="checkbox"> Batéria Huawei 5 kW LUNA2000-5/10/15-S0</label>
+                <label class="chk-label"><input type="checkbox"> Huawei Smart Backup Box-B0/B1</label>
+                <br>
+                <label class="chk-label margin-top-10"><input type="checkbox"> iné: <input type="text" class="input-line" style="width: 75%;"></label>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOPLNKY -->
+    <div class="grid-2col margin-bottom">
+        <div class="box-section">
+            <div class="padding-inner flex-between">
+                <span>Smartmeter</span>
+                <div class="radio-toggle">
+                    <label><input type="radio" name="sm"> Áno</label>
+                    <label><input type="radio" name="sm"> Nie</label>
+                </div>
+            </div>
+            <div class="padding-inner flex-between border-top">
+                <span>SolarEdge Wireless-Gateway</span>
+                <div class="radio-toggle">
+                    <label><input type="radio" name="gw"> Áno</label>
+                    <label><input type="radio" name="gw"> Nie</label>
+                </div>
+            </div>
+            <div class="padding-inner flex-between border-top">
+                <span>Optimizéry (technológia Huawei)</span>
+                <div class="flex-align">
+                    <div class="radio-toggle">
+                        <label><input type="radio" name="opt"> Áno</label>
+                        <label><input type="radio" name="opt"> Nie</label>
+                    </div>
+                    <div class="counter-control margin-left-5">
+                        <button type="button" class="btn-step no-print" onclick="changeVal('opt_ks', -1)">-</button>
+                        <input type="number" id="opt_ks" class="input-num text-center" value="0">
+                        <button type="button" class="btn-step no-print" onclick="changeVal('opt_ks', 1)">+</button>
+                        <span>ks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-section">
+            <div class="padding-inner flex-between">
+                <span>Smart Energy SolarEdge Hot Water</span>
+                <div class="radio-toggle">
+                    <label><input type="radio" name="hw"> Áno</label>
+                    <label><input type="radio" name="hw"> Nie</label>
+                </div>
+            </div>
+            <div class="padding-inner flex-between border-top">
+                <span>Snímač teploty vody SolarEdge</span>
+                <div class="radio-toggle">
+                    <label><input type="radio" name="temp"> Áno</label>
+                    <label><input type="radio" name="temp"> Nie</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TEXTOVÉ POĽA -->
+    <div class="grid-2col margin-bottom">
+        <div class="box-section">
+            <div class="box-header">Dodatočný materiál a služby podľa Prílohy č. 2</div>
+            <textarea class="text-area-box"></textarea>
+        </div>
+        <div class="box-section">
+            <div class="box-header">Popis zistenej vady zariadenia</div>
+            <textarea class="text-area-box"></textarea>
+        </div>
+    </div>
+
+    <!-- VYHLÁSENIE -->
+    <div class="declaration-box margin-bottom">
+        Objednávateľ svojím podpisom potvrdzuje dodanie a inštaláciu vyššie uvedeného zariadenia a potvrdzuje, že jednotlivé komponenty zariadenia sú umiestnené podľa požiadaviek Objednávateľa, nainštalované zariadenie je funkčné, bolo odskúšané v jeho prítomnosti a okrem vyššie uvedených závad nemá iné závady. Objednávateľ obdržal všetku potrebnú dokumentáciu a bol riadne oboznámený s obsluhou a údržbou zariadenia a porozumel jej. Odborne spôsobilá osoba svojím podpisom potvrdzuje, že zabezpečila inštaláciu zariadenia. Zástupca zhotoviteľa svojím podpisom potvrdzuje, že zariadenie dodal, zabezpečil inštaláciu odborne spôsobilou osobou a objednávateľovi odovzdáva zariadenie uvedené do prevádzky.
+    </div>
+
+    <!-- PODPISY -->
+    <div class="signatures-grid margin-bottom">
+        <div class="sig-column">
+            <div class="sig-block">
+                <strong>Za Objednávateľa:</strong>
+                <div class="sig-row margin-top-5">
+                    <div class="sig-field" style="width: 50%;"><label>Miesto</label><input type="text" class="input-full"></div>
+                    <div class="sig-field" style="width: 50%;"><label>Dátum</label><input type="date" class="input-full"></div>
+                </div>
+                <div class="sig-row margin-top-5">
+                    <div class="sig-field" style="width: 50%;"><label>Meno a priezvisko</label><input type="text" class="input-full"></div>
+                    <div class="sig-field" style="width: 50%;">
+                        <label>Podpis (klikni pre podpis)</label>
+                        <div class="sig-preview-box" onclick="openSigModal('sig1')">
+                            <img id="img-sig1" class="sig-img-preview" alt="">
+                            <span class="sig-placeholder no-print">Podpísať tu</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sig-row margin-top-5">
+                    <div class="sig-field" style="width: 50%;"><label>Meno a priezvisko</label><input type="text" class="input-full"></div>
+                    <div class="sig-field" style="width: 50%;">
+                        <label>Podpis (klikni pre podpis)</label>
+                        <div class="sig-preview-box" onclick="openSigModal('sig2')">
+                            <img id="img-sig2" class="sig-img-preview" alt="">
+                            <span class="sig-placeholder no-print">Podpísať tu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sig-block margin-top-10">
+                <strong>Za Zhotoviteľa:</strong>
+                <div class="sig-row margin-top-5">
+                    <div class="sig-field" style="width: 50%;"><label>Miesto</label><input type="text" class="input-full"></div>
+                    <div class="sig-field" style="width: 50%;"><label>Dátum</label><input type="date" class="input-full"></div>
+                </div>
+                <div class="sig-row margin-top-5">
+                    <div class="sig-field" style="width: 50%;"><label>Meno a priezvisko</label><input type="text" class="input-full"></div>
+                    <div class="sig-field" style="width: 50%;">
+                        <label>Podpis (klikni pre podpis)</label>
+                        <div class="sig-preview-box" onclick="openSigModal('sig3')">
+                            <img id="img-sig3" class="sig-img-preview" alt="">
+                            <span class="sig-placeholder no-print">Podpísať tu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sig-column">
+            <div class="sig-block">
+                <strong>Zhotoviteľom poverená odborne spôsobilá osoba, ktorá inštaláciu vykonala:</strong>
+                <div class="sig-row margin-top-5">
+                    <div class="sig-field" style="width: 50%;"><label>Miesto</label><input type="text" class="input-full"></div>
+                    <div class="sig-field" style="width: 50%;"><label>Dátum</label><input type="date" class="input-full"></div>
+                </div>
+                <div class="sig-row margin-top-5">
+                    <div class="sig-field" style="width: 50%;"><label>Meno a priezvisko</label><input type="text" class="input-full"></div>
+                    <div class="sig-field" style="width: 50%;">
+                        <label>Podpis (klikni pre podpis)</label>
+                        <div class="sig-preview-box" onclick="openSigModal('sig4')">
+                            <img id="img-sig4" class="sig-img-preview" alt="">
+                            <span class="sig-placeholder no-print">Podpísať tu</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sig-row margin-top-5">
+                    <div class="sig-field" style="width: 50%;"><label>Číslo oprávnenia podľa §13a, Zákona 309/2009</label><input type="text" class="input-full"></div>
+                    <div class="sig-field" style="width: 50%;"><label>Pečiatka</label><div class="stamp-box"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-code">
+        20230708_ESK_Fotovolt_Preberaci_protokol
+    </div>
+
+    <button class="btn-print no-print" onclick="window.print()">Vytlačiť / Uložiť PDF</button>
+</div>
+
+<!-- VELKÉ MODÁLNE OKNO PRE POHODLNÉ PODPISOVANIE -->
+<div id="sigModal" class="sig-modal no-print">
+    <div class="sig-modal-content">
+        <div class="sig-modal-header">
+            <h3>Podpíšte sa do rámčeka</h3>
+            <span class="close-modal" onclick="closeSigModal()">&times;</span>
+        </div>
+        <div class="sig-canvas-wrapper">
+            <canvas id="modalCanvas"></canvas>
+        </div>
+        <div class="sig-modal-footer">
+            <button class="btn-modal btn-clear-modal" onclick="clearModalCanvas()">Vymazať</button>
+            <button class="btn-modal btn-cancel-modal" onclick="closeSigModal()">Zrušiť</button>
+            <button class="btn-modal btn-confirm-modal" onclick="saveSignature()">Potvrdiť podpis</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
